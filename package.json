@@ -1,0 +1,16 @@
+{
+  "name": "tailwild-css",
+  "version": "1.0.0",
+  "description": "Belajar Tailwind CSS v4",
+  "scripts": {
+    "dev": "node node_modules/@tailwindcss/cli/dist/index.mjs -i ./tailwind.css -o ./style.css --watch",
+    "build": "node node_modules/@tailwindcss/cli/dist/index.mjs -i ./tailwind.css -o ./style.css --minify"
+  },
+  "keywords": ["tailwindcss", "belajar"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^4.3.5",
+    "@tailwindcss/cli": "^4.3.5"
+  }
+}

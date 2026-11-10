@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Tailwind CSS v4</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* * {
+            border: solid 1px red;
+            border-style: solid;
+        } */
+    </style>
+</head>
+<Body>
+    <section class="mb-8">
+        <h2 class="font-bold text-center text-3xl">Spacing</h2>
+        <p class="mx-4 my-6">Margin Kiri dan Kanan pakai : px , kalau atas dan bawah pakai : py, dan peding ada -(min) dan auto</p>
+        <p class="px-3 py-6">Padding Kiri dan Kanan pakai : px, kalau atas dan bawah pakai : py padding tidak memiliki - (min)  </p>
+    </section>
+    <section class="mb-8  bg-gradient-to-r from-red-700 via-yellow-400 to-gray-400 ">
+        <h2 class="text-3xl text-center font-bold">Sizing</h2>
+        <div class="w-150 h-20 mb-4">Kotak 1 : Atur Lebar (Width) : w , dan atur tinggi nya (height) : h</div>
+        <div class="max-w-xl max-h-xs">max-max width batas maksimal dan minimum lebar : max-w - min-w , max-max height batas maksimal dan minimum tinggi : max-h - min-h, atau atur sesuai dengan tinggi layar menggunakan min-h-screen</div>
+    </section>
+    <section class="mb-6 maw-w-4xl m-auto">
+        <h2 class="text-4xl font-bold text-center mb-4">Typography</h2>
+        <h2 class="font-bold text-6xl"> <span class="bg-linear-to-r from-red-600 via-blue-500 to-yellow-400 dark:via-none dark:from-blue-500 dark:to-teal-400 bg-clip-text text-transparent">Artikel</span> Tentang Pelajaran <span class="bg-linear-to-r from-red-600 via-blue-500 to-yellow-500 bg-clip-text text-transparent inline">CSS tailwind (pakai inline karena lebih dari 1 kata )</span></h2>
+        <p class="my-3 text-lg text-fuchsia-700">By ZeroCross, 9 September 2026</p>
+        <p>Lorem ipsum, dolor sit amet <a href="#" class="underline font-semibold"> arsitektur</a> consectetur adipisicing elit. Vero facilis voluptates numquam explicabo nobis quae, enim doloribus quibusdam animi a.</p>
+        <blockquote class="text-slate-500 italic font-mono my-4">Lorem ipsum dolor sit amet spa spamconsectetur, adipisicing elit.</blockquote>
+        <p class="bg-amber-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, eius.</p>
+    </section>
+    
+    <div class="bg-yellow-400 max-w-2xl h-100 my-4 mx-auto bg-[url(/image/meme3.png)] bg-contain overflow-y-scroll bg-scroll">
+        <h2 class="text-center font-bold text-3xl text-white">BackGround</h2>
+        <p class="text-xl font-serif text-slate-400">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt explicabo nesciunt dolor vero, quas itaque. Ducimus eum veniam reprehenderit ipsum ipsa non, iure cum necessitatibus veritatis deserunt id nihil eligendi sapiente nisi commodi ipsam voluptatibus vero distinctio animi sequi quidem atque beatae? Nisi debitis iusto enim cum minus excepturi quia in beatae dolorum, hic, nemo eaque cumque eum eligendi possimus odio vel exercitationem voluptatem quis quam voluptate ullam natus repellendus dicta? Temporibus, possimus error! Doloribus pariatur magnam ea error maiores sunt harum atque corrupti aliquid praesentium. Nemo eveniet velit delectus iusto similique quos neque laudantium animi, labore tempore? Quis veniam esse nisi ullam, iste cumque natus amet, incidunt autem quasi quisquam! Cumque architecto, voluptate nam quasi facilis quidem molestias doloremque neque, impedit adipisci, ratione natus error illum delectus sapiente nemo dolorem fugit. Ipsam nulla tempora nisi nostrum quis modi illo ducimus, sunt neque mollitia quaerat assumenda libero sed eaque molestias voluptatem iure. Facere magnam velit recusandae quis consequatur magni, laborum vel minus voluptatem perferendis. Quos rerum earum eos magni maxime adipisci, velit qui nihil reprehenderit voluptatem consectetur itaque aperiam, odio dolor libero nesciunt veniam natus magnam voluptas minima! Tempore nulla similique, quibusdam deleniti possimus voluptatem neque esse eveniet explicabo beatae inventore magni architecto ipsam amet ullam, exercitationem, sint aliquam cumque itaque. Nobis eligendi dolor dicta laboriosam esse explicabo illum pariatur sequi quod dolore, dolores sunt corporis consequuntur dignissimos soluta, voluptatum sapiente quasi asperiores saepe reiciendis praesentium? Vitae natus rerum impedit sapiente architecto deserunt laudantium quo sunt hic inventore? Laudantium fuga voluptas quam porro fugit eos. Maxime ex eum atque perspiciatis cupiditate quas, architecto labore dicta harum, voluptate adipisci nesciunt consectetur perferendis quis porro. Eius eligendi accusantium at, numquam repellat totam possimus, sint, fugit quo excepturi doloremque perspiciatis a. Porro libero suscipit temporibus, a facilis cumque facere eligendi ex aliquam quaerat!</p>
+    </div>
+
+    <div class="max-w-xl bg-slate-400 h-150 mx-auto mt-20 bg-[url(/image/meme3.png)] bg-no-repeat bg-center rounded-2xl  ring-8 inset-ring-8 ring-blue-500 inset-ring-yellow-400 shadow-2xl shadow-violet-600 opacity-50">
+        <h2 class="text-3xl font-bold text-center">Borders</h2>
+    </div>
+    
+    <div class="max-w-xl flex flex-col text-center bg-slate-400 h-150 
+                mx-auto mt-20 bg-[url(/image/meme3.png)] 
+                bg-center bg-no-repeat blur-xs hover:blur-none ">
+        <div class="w-full text-center py-3">
+            <p class="text-3xl block justify-center  font-bold ">Filter</p>
+        </div>
+        <div class="w-40 h-40 m-auto justify-center content-center bg-slate-500/20 
+                    backdrop-blur-md rounded-full">
+        </div>
+    </div>
+
+    <hr class="mt-10">
+
+    <div class="mt-200"></div>
+</Body>
+</html>
