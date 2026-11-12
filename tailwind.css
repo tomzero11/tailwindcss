@@ -1,1 +1,23 @@
 @import "tailwindcss";
+/* @custom-variant dark (&:where(.dark, .dark *))  */
+
+@custom-variant dark {
+  &:where(.dark, .dark *) {
+    @slot;
+  }
+}
+@theme {
+  /* Daftarkan font Google yang sudah di-link di HTML */
+  --font-inter: "Inter", sans-serif;
+  --font-redaction: "Redaction 100", sans-serif;
+  --font-jetbrains: "JetBrains Mono", monospace;
+  --animate-spin-slow: spin 3s linear infinite;
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+  --color-dark-aubergine: #2e0f35;
+}
+
+  /* Daftarkan keyframes langsung di dalam blok @theme */
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }

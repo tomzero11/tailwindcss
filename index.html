@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Belajar Tailwind CSS v4</title>
     <link rel="stylesheet" href="./style.css">
-    <style>
-        /* * {
-            border: solid 1px red;
-            border-style: solid;
-        } */
-    </style>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Redaction+100:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
 </head>
-<Body>
-    <section class="mb-8">
+<body class="dark:bg-slate-900 dark:text-slate-200">
+    <section class="mb-8 ">
         <h2 class="font-bold text-center text-3xl">Spacing</h2>
         <p class="mx-4 my-6">Margin Kiri dan Kanan pakai : px , kalau atas dan bawah pakai : py, dan peding ada -(min) dan auto</p>
         <p class="px-3 py-6">Padding Kiri dan Kanan pakai : px, kalau atas dan bawah pakai : py padding tidak memiliki - (min)  </p>
     </section>
     <section class="mb-8  bg-gradient-to-r from-red-700 via-yellow-400 to-gray-400 ">
         <h2 class="text-3xl text-center font-bold">Sizing</h2>
-        <div class="w-150 h-20 mb-4">Kotak 1 : Atur Lebar (Width) : w , dan atur tinggi nya (height) : h</div>
+        <div class="max-w-lg h-20 mb-4">Kotak 1 : Atur Lebar (Width) : w , dan atur tinggi nya (height) : h</div>
         <div class="max-w-xl max-h-xs">max-max width batas maksimal dan minimum lebar : max-w - min-w , max-max height batas maksimal dan minimum tinggi : max-h - min-h, atau atur sesuai dengan tinggi layar menggunakan min-h-screen</div>
     </section>
     <section class="mb-6 maw-w-4xl m-auto">
@@ -52,8 +53,223 @@
         </div>
     </div>
 
-    <hr class="mt-10">
+    <hr class="mt-10 mb-20">
+    <h1 class="text-3xl text-center dark:text-slate-100 text-slate-500 font-bold mb-3">Pseudo Class & Dark Mode</h1>
+
+    <div class="flex justify-center items-center gap-3 mb-3">
+        <span class="text-sm text-slate-500 dark:text-slate-300 font-inter">Light</span>
+        <label class="relative inline-flex items-center cursor-pointer select-none">
+            <input type="checkbox" id="toggle" class="peer sr-only">
+            <div class=" w-9 h-5 rounded-full bg-slate-600 dark:bg-slate-100 transition-colors
+                        after:content-[''] after:absolute after:top-0.5 after:left-0.5
+                        after:w-4 after:h-4 after:rounded-full after:bg-slate-300 dark:after:bg-slate-600
+                        after:transition-transform after:duration-200
+                        peer-checked:after:translate-x-4"></div>
+        </label>
+        <span class="text-sm text-slate-800 dark:text-slate-300 font-inter">Dark</span>
+    </div>
+
+
+    <button class="text-xl font-inter font-semibold px-5 py-2 rounded-full block m-auto 
+                bg-sky-500 text-white hover:bg-sky-600 active:bg-sky-700
+                focus:ring focus:ring-black cursor-pointer dark:bg-slate-200 dark:text-slate-700
+                dark:hover:bg-slate-400 dark:focus:ring-2 dark:focus:ring-slate-100 dark:hover:text-slate-200
+                dark:active:bg-slate-900"
+                >
+                Simpan
+    </button>
+
+    <div class="max-w-lg border border-slate-200 rounded-xl mx-auto p-5 shadow-md my-10 font-serif 
+                hover:bg-sky-400 dark:hover:bg-slate-300 dark:shadow-md dark:shadow-slate-200 group">
+        <h5 class="font-semibold text-slate-800 mb-2 group-hover:text-white 
+                    selection:bg-lime-300 selection:text-slate-600 dark:text-slate-100 
+                    dark:group-hover:text-slate-800"
+                    >
+                    My Card
+        </h5>
+        <p class="text-justify text-slate-600 group-hover:text-white
+                    selection:bg-lime-300 selection:text-slate-600 first-line:uppercase first-line:tracking-widest
+                    first-letter:text-8xl first-letter:float-left first-letter:mr-3 dark:text-slate-100 
+                    dark:group-hover:text-slate-800"
+                    >
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab assumenda quaerat atque ipsam sapiente excepturi provident obcaecati dicta tempora labore eius facilis, quo quidem quos velit debitis aperiam? Magni, veritatis.
+        </p>
+    </div>
+
+    <div class="max-w-lg border border-slate-200 rounded-xl mx-auto shadow-md font-inter p-5 dark:shadow-md dark:shadow-slate-200">
+        <form action="">
+            <label 
+                    for="email" 
+                    class="text-slate-500 font-semibold block text-sm mb-2 
+                        after:content-['*'] after:text-pink-900 dark:text-slate-100 
+                        "
+                    >
+                    Email
+            </label>
+            <input 
+                type="email" 
+                name="email" 
+                id="email"
+                class="w-full px-3 py-2 text-xs block font-semibold rounded-md border border-slate-200 
+                        shadow-md text-slate-500 placeholder:opacity-50 outline-none focus:ring-1
+                        focus:ring-sky-500 invalid:text-pink-800 invalid:focus:ring-pink-800
+                        peer dark:text-slate-200"
+                placeholder="example@mail.com"
+            >
+            <p class="text-[10px] mt-1 text-pink-700 font-semibold invisible peer-invalid:visible ">
+                email tidak valid !!
+            </p>
+        </form>
+    </div>
+    
+    <hr class="my-10">
+    <h2 class="text-center text-3xl font-bold text-slate-500 mb-30 font-inter">Tansformation</h2>
+    <div class="w-40 h-40 bg-sky-500 m-auto rounded-md shadow-md shadow-slate-500 hover:scale-130 hover:rotate-45
+                hover:translate-x-60 hover:bg-pink-500 transition">
+    </div>
+    <div class="w-40 h-40  my-20 m-auto group">
+        <div class="w-full h-full bg-lime-300 rounded-xl shadow-md group-hover:rotate-45 group-hover:scale-220"></div>
+    </div>
+    <div class="w-40 h-40 my-20 m-auto group">
+        <div class="w-full h-full bg-violet-400 rounded-xl shadow-md group-hover:rotate-180 
+                    origin-top-left transition duration-1000 delay-1000"></div>
+    </div>
+    <h2 class="text-3xl text-inter font-bold mb-10 text-slate-500 text-center ">Animation</h2>
+    <div class="w-40 h-40 bg-sky-500 m-auto rounded-xl animate-spin mb-25"></div>
+    <div class="w-40 h-40 bg-sky-500 m-auto rounded-xl animate-spin-slow mb-25"></div>
+    <div class="w-40 h-40 bg-sky-500 m-auto rounded-xl animate-wiggle mb-25"></div>
+    <div class="w-40 h-40 bg-sky-500 m-auto rounded-xl animate-bounce mb-25"></div>
+    <div class="w-40 h-40 bg-sky-500 m-auto rounded-full animate-ping mb-25"></div>
+    <div class="w-40 h-40 bg-sky-500 m-auto rounded-full animate-pulse mb-25"></div>
+
+    <hr class="my-10">
+    <h2 class="font-bold text-3xl text-slate-500 font-inter text-center ">Layouting</h2>
+    <div class="container mx-auto">
+        <div class=" rounded-md border-slate-900 shadow-lg p-10  my-10 text-slate-600">
+            <img src="/image/meme3.png" alt="gemini" class="float-left rounded-lg mr-3 w-40 h-26">
+            <p class="text-slate-500 font-inter text-sm text-justify">Lorem ipsum dolor  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi deserunt, numquam alias distinctio soluta excepturi eum ad ipsa itaque consectetur nostrum ut sint minima nobis cum labore, ex accusantium quia autem asperiores quo veritatis repudiandae perferendis? Ipsam qui consequatur magni. sit amet consectetur adipisicing elit. Delectus ullam quibusdam animi exercitationem harum voluptate inventore illum, optio tempora laudantium et amet rerum magnam corporis cumque saepe eos, minus assumenda suscipit! Rerum, repellat. Saepe est quas deserunt quibusdam dolorum. Quidem pariatur nihil autem dignissimos nesciunt in nostrum blanditiis fugiat? Dicta?</p>
+        </div>
+    </div>
+    <h2 class="text-3xl font-inter text-slate-500 text-center font-bold">Position</h2>
+    <div class="container mx-auto">
+        <div class="border-slate-800 rounded-lg shadow-lg p-10 font-inter text-slate-500 text-justify relative">
+            <div class="bg-pink-700 w-10 rounded-full h-10 flex justify-center absolute -top-5 -right-5">
+                <span class="text-lg text-slate-500 font-inter mx-auto my-auto cursor-pointer">x</span>
+            </div>
+            <img src="/image/meme3.png" alt="gemini" class="rounded-lg w-30 h-20 mb-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, aliquam. A distinctio, mollitia accusamus delectus voluptas ut vel sint deleniti.
+        </div>
+    </div>
+
+    <h2 class="text-3xl font-bold text-slate-500 text-center py-10">Colomn</h2>
+    <div class="container mx-auto">
+        <div class="border-slate-600 rounded-lg shadow-lg columns-4 p-10">
+            <img src="/image/meme3.png" alt="gemini" class="rounded-lg ">
+            <img src="/image/meme3.png" alt="gemini" class=" rounded-lg ">
+            <img src="/image/meme3.png" alt="gemini" class="rounded-lg">
+            <img src="/image/meme3.png" alt="gemini" class="rounded-lg">
+        </div>
+    </div>
+
+    <hr class="my-20">
+    <h1 class="text-3xl text-slate-500 font-bold font-inter text-center">Responsive Break Points</h1>
+    <div class="container px-6 mx-auto font-inter sm:bg-slate-300 md:bg-slate-500 lg:bg-lime-400 xl:bg-amber-300">
+        <h2 class="text-7xl font-inter mt-20 font-extrabold text-dark-aubergine sm:text-8xl"
+            >LaptopMu
+        </h2>
+        <h3 class="font-bold text-dark-aubergine font-inter mt-4 text-2xl sm:text-4xl "
+            >Mari BeLajar Bersama Laptop Mu
+        </h3>
+        <img src="/image/meme3.png" alt="gemini" class="rounded-lg my-5 md:w-100 md:float-left md:mr-4 lg:w-200 lg:float-none">
+        <h2 class="text-slate-700 font-semibold text-lg sm:text-xl md:mt-4">Belajar Bersama Laptop Mu Lebih Mudah</h2>
+        <p class="text-slate-400 text-sm text-justify sm:text-lg">Lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio aut dicta optio error veritatis impedit possimus, quidem animi voluptas atque. ipsum dolor sit amet, consectetur adipisicing elit. Voluptas voluptatum rerum a eius dolores, asperiores vero earum nobis error esse explicabo inventore reiciendis exercitationem, quod eaque laborum mollitia odio tenetur corrupti? Culpa neque amet aut, distinctio accusantium iste, suscipit expedita assumenda, id dicta maxime architecto fuga dolorem molestias veritatis et?</p>
+    </div>
+    
+    <hr class="my-10">
+    <h2 class="text-3xl font-bold font-inter text-slate-500 mb-20 text-center">FlexBox</h2>
+    
+    <div class="container px-6 mx-auto font-inter sm:flex sm:justify-evenly sm:flex-wrap sm:gap-4 sm:mb-0">
+        <div class="border-slate-300 rounded-lg shadow-md p-7 mx-auto w-100 mb-6 sm:w-60 md:w-80 lg:w-72">
+            <h4 class="text-slate-500 text-xl font-bold">Card</h4>
+            <img src="./image/meme3.png" alt="image" class="rounded-lg my-2 ">
+            <div class="my-4 ">
+                <div class="text-sm text-slate-500 font-bold mb-2">Image Title</div>
+                <p class="text-sm text-slate-400 text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, necessitatibus.</p>
+            </div>
+        </div>
+        <div class="border-slate-300 rounded-lg shadow-md p-7 mx-auto w-100 mb-6 sm:w-60 md:w-80 lg:w-72">
+            <h4 class="text-slate-500 text-xl font-bold">Card</h4>
+            <img src="./image/meme3.png" alt="image" class="rounded-lg my-2 ">
+            <div class="my-4 ">
+                <div class="text-sm text-slate-500 font-bold mb-2">Image Title</div>
+                <p class="text-sm text-slate-400 text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, necessitatibus.</p>
+            </div>
+        </div>
+        <div class="border-slate-300 rounded-lg shadow-md p-7 mx-auto w-100 mb-6 sm:w-60 md:w-80 lg:w-72">
+            <h4 class="text-slate-500 text-xl font-bold">Card</h4>
+            <img src="./image/meme3.png" alt="image" class="rounded-lg my-2 ">
+            <div class="my-4 ">
+                <div class="text-sm text-slate-500 font-bold mb-2">Image Title</div>
+                <p class="text-sm text-slate-400 text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, necessitatibus.</p>
+            </div>
+        </div>
+        <div class="border-slate-300 rounded-lg shadow-md p-7 mx-auto w-100 mb-6 sm:w-60 md:w-80 lg:w-72">
+            <h4 class="text-slate-500 text-xl font-bold">Card</h4>
+            <img src="./image/meme3.png" alt="image" class="rounded-lg my-2 ">
+            <div class="my-4 ">
+                <div class="text-sm text-slate-500 font-bold mb-2">Image Title</div>
+                <p class="text-sm text-slate-400 text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, necessitatibus.</p>
+            </div>
+        </div>
+        <div class="border-slate-300 rounded-lg shadow-md p-7 mx-auto w-100 mb-6 sm:w-60 md:w-80 lg:w-72">
+            <h4 class="text-slate-500 text-xl font-bold">Card</h4>
+            <img src="./image/meme3.png" alt="image" class="rounded-lg my-2 ">
+            <div class="my-4 ">
+                <div class="text-sm text-slate-500 font-bold mb-2">Image Title</div>
+                <p class="text-sm text-slate-400 text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, necessitatibus.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-10">
+    <h2 class="text-3xl font-bold text-inter text-center text-slate-500 mb-5">Grid</h2>
+
+    <div class="px-6 grid grid-cols-2 gap-3 md:grid-cols-4 font-inter">
+        <div class=" md:aspect-3/4 lg:aspect-4/3 text-slate-700 text-lg font-semibold
+                    md:col-start-4 md:row-start-2 md:flex"
+            >
+            <span class=" md:self-center text-dark-aubergine font-bold">Teman Laptop Mu !!</span>
+        </div>
+        <div class=" md:aspect-3/4 lg:aspect-4/3 text-slate-500 text-sm md:col-start-2 md:row-start-2
+                    md:flex"
+                >
+                <span class="self-end">@zerocross</span>
+        </div>
+        <div class="bg-sky-400 rounded-lg shadow-md aspect-4/3 md:aspect-3/4 lg:aspect-4/3 overflow-hidden 
+                     group hover:scale-90 duration-500">
+            <div class="w-full h-full bg-[url('./image/1.jpeg')] bg-cover bg-center group-hover:scale-120 
+                         duration-500 transition-all">
+            </div>
+        </div>
+        <div class="bg-sky-400 rounded-lg shadow-md aspect-4/3 md:aspect-3/4 lg:aspect-4/3 md:col-start-3"> dua</div>
+        <div class="bg-sky-400 rounded-lg shadow-md aspect-4/3 md:aspect-3/4 lg:aspect-4/3" > tiga</div>
+        <div class="bg-sky-400 rounded-lg shadow-md aspect-4/3 md:aspect-3/4 lg:aspect-4/3"> empat</div>
+        <div class="bg-sky-400 rounded-lg shadow-md aspect-4/3 md:aspect-3/4 lg:aspect-4/3"> lima</div>
+        <div class="bg-sky-400 rounded-lg shadow-md aspect-4/3 md:aspect-3/4 lg:aspect-4/3 md:col-start-2"> enam</div>
+        <div class="bg-sky-400 rounded-lg shadow-md aspect-4/3 md:aspect-3/4 lg:aspect-4/3 md:col-start-4"> 7</div>
+        <div class="bg-sky-400 rounded-lg shadow-md aspect-4/3 md:aspect-3/4 lg:aspect-4/3"> 8</div>
+        <div class="bg-sky-400 rounded-lg shadow-md aspect-4/3 md:aspect-3/4 lg:aspect-4/3 md:col-start-3"> 9</div>
+        <div class="bg-sky-400 rounded-lg shadow-md aspect-4/3 md:aspect-3/4 lg:aspect-4/3 md:col-start-3"> 10</div>
+        
+    </div>
 
     <div class="mt-200"></div>
-</Body>
+    <script>
+        const toggle = document.getElementById("toggle")
+        const html = document.querySelector("html")
+        toggle.addEventListener("change", () => {
+            html.classList.toggle('dark', toggle.checked)
+        })
+    </script>
+</body>
 </html>
